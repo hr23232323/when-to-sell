@@ -1,0 +1,10 @@
+
+
+
+# Constants
+SPY_DATA_FILE="SPY.csv"
+QQQ_DATA_FILE="QQQ.csv"
+TLT_DATA_FILE="TLT.csv"
+SPY= "SPY"
+TLT= "TLT"
+QQQ= "QQQ"
