@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from main.constants import (
+from constants import (
     QQQ_DATA_FILE,
     QQQ_PROCESSED_DATA_FILE,
     QQQ
@@ -14,7 +14,7 @@ class Processor:
 
     def process_data(self, file_name):
         # Get filepath and load raw data
-        file_path = self.generate_filepath(file_name)
+        file_path = generate_filepath(file_name)
         raw_data = pd.read_csv(file_path)
 
         # Keep only imp fields
@@ -26,13 +26,13 @@ class Processor:
         return processed_data
 
 
-    def generate_filepath(self, file_name):
-        return DATA_DIR  + file_name
+def generate_filepath(file_name):
+    return DATA_DIR  + file_name
 
 def main():
     processor = Processor()
     qqq_processed_data = processor.process_data(QQQ_DATA_FILE)
-    qqq_processed_data.to_csv(processor.generate_filepath(QQQ_PROCESSED_DATA_FILE), index=False)
+    qqq_processed_data.to_csv(generate_filepath(QQQ_PROCESSED_DATA_FILE), index=False)
 
 
 if __name__ == "__main__":
